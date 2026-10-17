@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Origin Health — Calm, unhurried primary care &amp; wellness</title>
+  <meta name="description" content="Origin Health pairs thoughtful primary care with practical wellness programs. Book your appointment in under a minute.">
+  <meta name="theme-color" content="#F7F7F3">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23404934'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23969876'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/newsreader-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Origin Health home">
+        <img src="assets/logo.png" alt="Origin Health" width="600" height="252">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+      <div class="nav-wrap" id="site-nav">
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="#services">Primary Care</a></li>
+            <li><a href="#services">Wellness</a></li>
+            <li><a href="#approach">Our Approach</a></li>
+            <li><a href="#contact">Locations</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <a href="#contact" class="link-quiet">Sign in</a>
+          <a href="#book" class="btn btn-primary btn-sm">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <svg class="rings" aria-hidden="true" viewBox="0 0 1000 1000">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="500" cy="500" r="110"/><circle cx="500" cy="500" r="190"/>
+          <circle cx="500" cy="500" r="280"/><circle cx="500" cy="500" r="380"/>
+          <circle cx="500" cy="500" r="490"/>
+        </g>
+        <circle class="rings-dot" cx="500" cy="500" r="14"/>
+      </svg>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Primary care &amp; wellness<span class="hide-sm"> · Now welcoming new patients</span></p>
+          <h1 class="display">Calm, unhurried care, <em>from the very first visit.</em></h1>
+          <p class="lead">Origin Health pairs thoughtful primary care with practical wellness programs, so you leave every visit feeling heard, not hurried.</p>
+          <div class="hero-ctas">
+            <a href="#book" class="btn btn-primary btn-lg">Book your appointment now
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#services" class="link-underline">Explore our services</a>
+          </div>
+          <ul class="trust">
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Unrushed appointments</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>In clinic or virtual</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>One care team, one plan</li>
+          </ul>
+        </div>
+
+        <!-- BOOKING CARD -->
+        <form class="booking" id="book" novalidate aria-labelledby="booking-title">
+          <div class="booking-head">
+            <p class="eyebrow eyebrow-sm">Next available this week</p>
+            <h2 id="booking-title">Book your appointment</h2>
+          </div>
+
+          <fieldset>
+            <legend>Type of visit</legend>
+            <div class="segmented" data-group="type">
+              <button type="button" data-value="Primary care" aria-pressed="true">Primary care</button>
+              <button type="button" data-value="Wellness" aria-pressed="false">Wellness</button>
+              <button type="button" data-value="Virtual" aria-pressed="false">Virtual</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Choose a day · <span id="month-label">October</span></legend>
+            <div class="days" data-group="day" id="day-list"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Choose a time</legend>
+            <div class="times" data-group="time">
+              <button type="button" data-value="8:30 AM" aria-pressed="false">8:30 AM</button>
+              <button type="button" data-value="9:15 AM" aria-pressed="true">9:15 AM</button>
+              <button type="button" data-value="10:45 AM" aria-pressed="false">10:45 AM</button>
+              <button type="button" data-value="1:30 PM" aria-pressed="false">1:30 PM</button>
+              <button type="button" data-value="3:00 PM" aria-pressed="false">3:00 PM</button>
+              <button type="button" data-value="4:15 PM" aria-pressed="false">4:15 PM</button>
+            </div>
+          </fieldset>
+
+          <div class="booking-foot">
+            <button type="submit" class="btn btn-primary btn-block">Book Appointment
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="booking-summary" id="booking-summary" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <p class="eyebrow">What we offer</p>
+            <h2 class="h2">Everything your health needs, in one calm place.</h2>
+          </div>
+          <p class="section-note">Everyday medicine and long-term wellbeing, delivered by one care team that knows your story.</p>
+        </div>
+
+        <div class="service-cols">
+          <article class="service-card">
+            <header><h3>Primary Care</h3><span class="num">01</span></header>
+            <ul>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 11h6M9 15h4"/></svg>
+                <div><h4>Annual check-ups &amp; screenings</h4><p>A full picture of your health, explained in plain language.</p></div></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+                <div><h4>Sick &amp; same-week visits</h4><p>Prompt care for colds, infections and everyday concerns.</p></div></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+                <div><h4>Chronic condition care</h4><p>Steady support for blood pressure, diabetes, thyroid and more.</p></div></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>
+                <div><h4>Women’s, men’s &amp; family health</h4><p>Care that adapts to every stage of life.</p></div></li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <header><h3>Wellness Programs</h3><span class="num">02</span></header>
+            <ul>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></svg>
+                <div><h4>Nutrition coaching</h4><p>Realistic eating habits built around your life, not a diet.</p></div></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+                <div><h4>Sleep &amp; stress reset</h4><p>Gentle, guided routines for better rest and a clearer mind.</p></div></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.8"/><path d="M8 21l3-7 3 3v5"/><path d="M6 11l3-3h5l3 4"/></svg>
+                <div><h4>Movement &amp; mobility</h4><p>Personal plans that keep you strong, flexible and active.</p></div></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+                <div><h4>Preventive health plans</h4><p>Stay ahead of risks with a plan reviewed together each year.</p></div></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy" aria-label="Our philosophy">
+      <div class="container narrow">
+        <span class="dot dot-lg" aria-hidden="true"></span>
+        <p class="statement">Good health begins at its origin — <em>with time, attention, and a plan made together with you.</em></p>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="approach" id="approach">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2 class="h2">Three simple steps to better care.</h2>
+        </div>
+        <ol class="steps">
+          <li><span class="step-num">01</span><h3>Book in a minute</h3><p>Pick a time that suits you, in clinic or online, right from this page.</p></li>
+          <li><span class="step-num">02</span><h3>Meet your care team</h3><p>An unhurried first visit that starts by listening to you.</p></li>
+          <li><span class="step-num">03</span><h3>Follow one clear plan</h3><p>Your clinician and wellness coach work from the same plan, together.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-wrap" id="contact">
+      <div class="cta">
+        <svg class="cta-rings" aria-hidden="true" viewBox="0 0 800 800">
+          <g fill="none" stroke="currentColor" stroke-width="1"><circle cx="400" cy="400" r="200"/><circle cx="400" cy="400" r="290"/><circle cx="400" cy="400" r="390"/></g>
+        </svg>
+        <h2>Your first visit is the hardest step. <em>We’ve made it an easy one.</em></h2>
+        <a href="#book" class="btn btn-light btn-lg">Book Appointment
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="cta-note">Prefer to talk? Call us at [PHONE NUMBER]</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/logo.png" alt="Origin Health" width="600" height="252">
+      <p>[CLINIC ADDRESS] · Mon–Fri 8am–6pm</p>
+      <p>© <span id="year">2026</span> Origin Health</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

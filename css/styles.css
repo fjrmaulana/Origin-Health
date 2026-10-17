@@ -1,0 +1,302 @@
+/* ==========================================================
+   Origin Health — landing page
+   Minimal, calm, cool-muted palette drawn from the logo.
+   ========================================================== */
+
+/* ---------- Fonts (self-hosted, SIL OFL) ---------- */
+@font-face { font-family: "Newsreader"; font-style: normal; font-weight: 300; font-display: swap; src: url("../assets/fonts/newsreader-latin-300-normal.woff2") format("woff2"); }
+@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 300; font-display: swap; src: url("../assets/fonts/newsreader-latin-300-italic.woff2") format("woff2"); }
+@font-face { font-family: "Newsreader"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/newsreader-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 400; font-display: swap; src: url("../assets/fonts/newsreader-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/figtree-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/figtree-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/figtree-latin-600-normal.woff2") format("woff2"); }
+
+/* ---------- Tokens ---------- */
+:root {
+  --ground: #F7F7F3;
+  --surface: #FFFFFF;
+  --mist: #EDF1EE;
+  --mist-strong: #EEF1ED;
+  --ink: #2F362A;
+  --brand: #404934;        /* logo ink */
+  --brand-soft: #5C6A50;
+  --sage: #969876;         /* logo dot */
+  --text: #4F5648;
+  --muted: #6B7163;
+  --line: #E3E6DF;
+  --line-2: #DDE2DA;
+  --chip-line: #D5DAD3;
+  --ring: #D3DBD6;
+  --deep: #3A4430;
+  --on-deep: #F6F5EF;
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow: 0 30px 60px -30px rgba(47, 54, 42, 0.22);
+  --container: 1240px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--brand); }
+a:hover { color: var(--ink); }
+h1, h2, h3, h4, p { margin: 0; }
+em { font-style: italic; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+
+.skip-link {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: var(--brand); color: var(--on-deep);
+  padding: 10px 16px; border-radius: 999px; text-decoration: none;
+}
+.skip-link:focus { top: 16px; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+.container.narrow { max-width: 1040px; }
+
+/* ---------- Type ---------- */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--brand-soft);
+}
+.eyebrow-sm { font-size: 12px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sage); flex: none; display: inline-block; }
+.dot-lg { width: 14px; height: 14px; }
+
+.display {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(44px, 6vw, 78px); line-height: 1.04; letter-spacing: -0.02em;
+}
+.display em, .h2 em, .statement em { color: var(--brand-soft); }
+.lead { max-width: 500px; font-size: 18px; line-height: 1.65; color: var(--text); }
+.h2 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(34px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.015em;
+  max-width: 620px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 44px; padding: 0 22px; border: 0; border-radius: 999px;
+  font-family: var(--sans); font-size: 15px; font-weight: 500; text-decoration: none;
+  cursor: pointer; transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.btn svg { transition: transform .2s ease; }
+.btn:hover svg { transform: translateX(3px); }
+.btn-primary { background: var(--brand); color: var(--on-deep); }
+.btn-primary:hover { background: var(--ink); color: var(--on-deep); }
+.btn-light { background: var(--on-deep); color: var(--ink); }
+.btn-light:hover { background: #FFFFFF; color: var(--ink); }
+.btn-lg { min-height: 54px; padding: 0 30px; font-size: 16px; }
+.btn-block { width: 100%; min-height: 56px; font-size: 17px; }
+
+.link-quiet { color: var(--text); text-decoration: none; font-size: 15px; font-weight: 500; }
+.link-underline { font-weight: 500; text-underline-offset: 6px; }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(247, 247, 243, 0.88); backdrop-filter: saturate(140%) blur(10px); -webkit-backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid transparent; transition: border-color .2s ease; }
+.site-header.is-scrolled { border-bottom-color: var(--line); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 22px; padding-bottom: 22px; }
+.brand img { height: 44px; width: auto; }
+.nav-wrap { display: flex; align-items: center; gap: 48px; }
+.nav-links { list-style: none; margin: 0; padding: 0; display: flex; gap: 36px; }
+.nav-links a { color: var(--text); text-decoration: none; font-size: 15px; font-weight: 500; }
+.nav-links a:hover { color: var(--ink); }
+.nav-actions { display: flex; align-items: center; gap: 20px; }
+.menu-toggle {
+  display: none; width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line-2); background: var(--surface); color: var(--ink);
+  align-items: center; justify-content: center; cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow: hidden; border-top: 1px solid var(--line); }
+.rings { position: absolute; right: -260px; top: -180px; width: 1000px; height: 1000px; color: var(--ring); pointer-events: none; }
+.rings-dot { fill: var(--sage); }
+.hero-inner { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 64px; padding-top: 96px; padding-bottom: 112px; }
+.hero-copy { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+.hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; }
+.trust {
+  list-style: none; margin: 12px 0 0; padding: 28px 0 0; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 16px 32px; font-size: 14px; color: var(--text);
+}
+.trust li { display: flex; align-items: center; gap: 10px; }
+.trust svg, .service-card li > svg {
+  fill: none; stroke: var(--brand-soft); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; flex: none;
+}
+.trust svg { width: 20px; height: 20px; }
+
+/* ---------- Booking card ---------- */
+.booking {
+  flex: 0 1 440px; min-width: 0;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 32px; box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 24px;
+}
+.booking-head { display: flex; flex-direction: column; gap: 4px; }
+.booking h2 { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.15; }
+.booking fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+.booking legend { padding: 0; margin-bottom: 10px; font-size: 13px; font-weight: 600; color: var(--text); }
+.booking button { font-family: var(--sans); cursor: pointer; color: var(--ink); }
+.booking .btn-primary { color: var(--on-deep); }
+
+.segmented { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--mist-strong); }
+.segmented button {
+  flex: 1 1 0; min-height: 44px; border: 0; border-radius: 999px; background: transparent;
+  font-size: 14px; font-weight: 500; color: var(--text); transition: background-color .2s ease, box-shadow .2s ease;
+}
+.segmented button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 2px 8px rgba(47, 54, 42, 0.12); }
+
+.days { display: flex; gap: 8px; }
+.days button {
+  flex: 1 1 0; min-width: 0; height: 68px; border-radius: 16px;
+  border: 1px solid var(--chip-line); background: var(--surface);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+.days .dow { font-size: 12px; font-weight: 500; opacity: .8; }
+.days .date { font-family: var(--serif); font-size: 20px; line-height: 1.1; }
+.days button:hover { border-color: var(--brand-soft); }
+.days button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--on-deep); }
+
+.times { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.times button {
+  min-height: 44px; border-radius: 12px; border: 1px solid var(--chip-line); background: var(--surface);
+  font-size: 14px; font-weight: 500; transition: border-color .2s ease, background-color .2s ease;
+}
+.times button:hover { border-color: var(--brand-soft); }
+.times button[aria-pressed="true"] { background: var(--mist-strong); border: 1.5px solid var(--brand); }
+
+.booking-foot { display: flex; flex-direction: column; gap: 12px; padding-top: 4px; }
+.booking-summary { min-height: 22px; text-align: center; font-size: 13px; color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 8px; }
+.booking-summary.is-confirmed { font-size: 14px; font-weight: 500; color: var(--brand); }
+.booking-summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Services ---------- */
+.services { background: var(--mist); padding: 112px 0; }
+.section-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 64px; }
+.section-head.split { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.section-head.split > div { flex: 1 1 520px; display: flex; flex-direction: column; gap: 16px; }
+.section-note { flex: 0 1 380px; color: var(--text); }
+
+.service-cols { display: flex; flex-wrap: wrap; gap: 32px; }
+.service-card { flex: 1 1 460px; min-width: 0; background: var(--ground); border-radius: var(--radius-lg); padding: 40px; }
+.service-card header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 28px; }
+.service-card h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.15; }
+.num { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted); }
+.service-card ul { list-style: none; margin: 0; padding: 0; }
+.service-card li { display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line-2); }
+.service-card li:last-child { padding-bottom: 0; }
+.service-card li > svg { width: 28px; height: 28px; stroke-width: 1.3; }
+.service-card h4 { font-size: 17px; font-weight: 600; }
+.service-card li p { margin-top: 4px; font-size: 15px; color: var(--text); }
+
+/* ---------- Philosophy ---------- */
+.philosophy { padding: 128px 0; }
+.philosophy .container { display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center; }
+.statement {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(30px, 3.6vw, 46px); line-height: 1.25; letter-spacing: -0.01em;
+}
+
+/* ---------- Approach ---------- */
+.approach { border-top: 1px solid var(--line); padding: 96px 0 120px; }
+.approach .section-head { margin-bottom: 56px; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 48px; }
+.steps li { flex: 1 1 280px; display: flex; flex-direction: column; gap: 14px; padding-top: 28px; border-top: 1px solid var(--ink); }
+.step-num { font-family: var(--serif); font-size: 22px; color: var(--brand-soft); }
+.steps h3 { font-size: 20px; font-weight: 600; }
+.steps p { color: var(--text); }
+
+/* ---------- CTA ---------- */
+.cta-wrap { padding: 0 32px 32px; }
+.cta {
+  position: relative; overflow: hidden; max-width: 1376px; margin: 0 auto;
+  border-radius: var(--radius-xl); background: var(--deep); color: var(--on-deep);
+  padding: 104px 48px; display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center;
+}
+.cta-rings { position: absolute; left: 50%; top: 50%; width: 800px; height: 800px; transform: translate(-50%, -50%); color: #4E5943; pointer-events: none; }
+.cta h2 {
+  position: relative; max-width: 760px;
+  font-family: var(--serif); font-weight: 300; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.1; letter-spacing: -0.015em;
+}
+.cta .btn, .cta-note { position: relative; }
+.cta-note { font-size: 15px; color: #D9DCCF; }
+
+/* ---------- Footer ---------- */
+.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-top: 48px; padding-bottom: 56px; font-size: 14px; color: var(--text); }
+.footer-inner img { height: 34px; width: auto; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .nav-wrap { gap: 28px; }
+  .nav-links { gap: 24px; }
+}
+
+@media (max-width: 900px) {
+  .menu-toggle { display: inline-flex; }
+  .nav-wrap {
+    position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; align-items: stretch; gap: 20px;
+    padding: 20px 20px 28px; background: var(--ground); border-bottom: 1px solid var(--line);
+    display: none;
+  }
+  .nav-wrap.is-open { display: flex; }
+  .nav-links { flex-direction: column; gap: 0; }
+  .nav-links a { display: block; padding: 12px 0; font-size: 17px; border-bottom: 1px solid var(--line); }
+  .nav-actions { justify-content: space-between; }
+  .hero-inner { padding-top: 56px; padding-bottom: 72px; gap: 40px; }
+  .booking { flex-basis: 100%; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .header-inner { padding-top: 16px; padding-bottom: 16px; }
+  .brand img { height: 34px; }
+  .rings { right: -560px; top: -260px; }
+  .hero-inner { padding-top: 36px; gap: 28px; }
+  .hero-copy { gap: 20px; }
+  .lead { font-size: 16px; }
+  .hide-sm { display: none; }
+  .display { font-size: 42px; }
+  .trust { gap: 12px 20px; padding-top: 20px; }
+  .booking { padding: 22px; border-radius: 22px; gap: 20px; }
+  .booking h2 { font-size: 25px; }
+  .days { gap: 6px; }
+  .days button { height: 62px; border-radius: 14px; }
+  .services { padding: 72px 0; }
+  .section-head { margin-bottom: 40px; }
+  .service-card { padding: 28px 22px; }
+  .service-card h3 { font-size: 27px; }
+  .philosophy { padding: 88px 0; }
+  .approach { padding: 72px 0 88px; }
+  .cta-wrap { padding: 0 12px 12px; }
+  .cta { padding: 72px 24px; border-radius: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn, .btn svg { transition: none; }
+}
